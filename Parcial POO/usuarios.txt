@@ -1,0 +1,2 @@
+contraseñaUsuario1 = 12345;
+ contraseñaUsuario2 = 6789;
