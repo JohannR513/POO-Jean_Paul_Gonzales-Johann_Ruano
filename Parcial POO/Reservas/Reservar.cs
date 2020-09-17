@@ -137,7 +137,9 @@ namespace FachadaUniversidad.Reservas
                 else if(OpcionUsuario == "5"){
                     cancelarMantenimiento();
                 }
-              
+              else if(OpcionUsuario == "6"){
+                iniciarClase();
+              }
             }
         }
 
@@ -380,6 +382,7 @@ namespace FachadaUniversidad.Reservas
                     }
 
                 }
+              
             }
 
         }
@@ -817,7 +820,7 @@ namespace FachadaUniversidad.Reservas
 
         }
         public void cancelarReserva(){
-            Console.WriteLine("Que salon deseas reservar: \n1-) salon 1 \n2-) salon 2\n3-) salon 3\n0-)Regresar al menu");
+            Console.WriteLine("Que salon deseas reservar: \n1-) salon 1 \n2-) salon 2\n3-) salon 3");
             OpcionUsuario = Console.ReadLine();
             if(OpcionUsuario=="1"){
                 cancelarReservaMenuSalon1();
@@ -1615,431 +1618,421 @@ namespace FachadaUniversidad.Reservas
             salon3_7pm="libre";
 
         }
-/*
-        public void iniciarClase(){
+      public void iniciarClase(){
           Console.WriteLine("En que salon deseas iniciar la clase?: \n1-) salon 1 \n2-) salon 2\n3-) salon 3");
           OpcionUsuario = Console.ReadLine();
           if(OpcionUsuario=="1"){
-                iniciarClaseSalon1();
+            iniciarClaseSalon1();
             }
             else if(OpcionUsuario=="2"){
-                iniciarClaseSalon2();
+                 iniciarClaseSalon2();
             }
             else if(OpcionUsuario=="3"){
-                iniciarClaseSalon3();
+                 iniciarClaseSalon3();
             }
         }
-        public void iniciarClaseSalon1(){
+      public void iniciarClaseSalon1(){
           Console.WriteLine("Que horario tienes la reserva para la clase: \n1-) 7am \n2-) 8am \n3-) 9am\n4-) 10am \n5-) 11am \n6-) 12am\n7-) 1pm \n8-) 2pm\n9-) 3pm\n10-) 4pm \n11-) 5pm \n12-) 6pm \n13-) 7pm");
-          if(OpcionUsuario=="1"){
-                    if(salon1_7am=="reservado"){
-                        Console.WriteLine("La clase ha iniciado");
-                        salon1_7am="Clase en curso";
-                        
-                    }
-                    else if(salon1_7am=="libre" || salon1_7am=="mantenimiento" ){
-                        Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                        
-                    }
+          OpcionUsuario = Console.ReadLine();
+        if( OpcionUsuario == "1" ){
+          if( salon1_7am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_7am = "clase en curso";
+          }
+          else if(salon1_7am == "libre" || salon1_7am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
         }
-         if(OpcionUsuario=="2"){
-                    if(salon1_8am=="reservado"){
-                        Console.WriteLine("La clase ha iniciado");
-                        salon1_8am="Clase en curso";
-                        
-                    }
-                    else if(salon1_8am=="libre" || salon1_8am=="mantenimiento" ){
-                        Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                        
-                    }
+        if( OpcionUsuario == "2" ){
+          if( salon1_8am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_8am = "clase en curso";
+          }
+        else if(salon1_8am == "libre" || salon1_8am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
         }
-         if(OpcionUsuario=="3"){
-                    if(salon1_9am=="reservado"){
-                        Console.WriteLine("La clase ha iniciado");
-                        salon1_9am="Clase en curso";
-                        
-                    }
-                    else if(salon1_9am=="libre" || salon1_9am=="mantenimiento" ){
-                        Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                        
-                    }
+        if( OpcionUsuario == "3" ){
+          if( salon1_9am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_9am = "clase en curso";
+          }
+          else if(salon1_9am == "libre" || salon1_9am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
         }
-          if(OpcionUsuario=="4"){
-                    if(salon1_10am=="reservado"){
-                        Console.WriteLine("La clase ha iniciado");
-                        salon1_10am="Clase en curso";
-                        
-                    }
-                    else if(salon1_10am=="libre" || salon1_10am=="mantenimiento" ){
-                        Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                    }
-                    }
-          if(OpcionUsuario=="5"){
-                    if(salon1_11am=="reservado"){
-                            Console.WriteLine("La clase ha iniciado");
-                            salon1_11am="Clase en curso";
-                            
-                        }
-                    else if(salon1_11am=="libre" || salon1_11am=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                        }
-                        }     
-            if(OpcionUsuario=="6"){
-                    if(salon1_12pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon1_12pm="Clase en curso";
-                                    
-                                }
-                    else if(salon1_12pm=="libre" || salon1_12pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="7"){
-                    if(salon1_1pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon1_1pm="Clase en curso";
-                                    
-                                }
-                    else if(salon1_1pm=="libre" || salon1_1pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="8"){
-                    if(salon1_2pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon1_2pm="Clase en curso";
-                                    
-                                }
-                    else if(salon1_2pm=="libre" || salon1_2pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                } 
-            if(OpcionUsuario=="9"){
-                    if(salon1_3pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon1_3pm="Clase en curso";
-                                    
-                                }
-                    else if(salon1_3pm=="libre" || salon1_3pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }                                       
-            if(OpcionUsuario=="10"){
-                    if(salon1_4pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon1_4pm="Clase en curso";
-                                    
-                                }
-                    else if(salon1_4pm=="libre" || salon1_4pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="11"){
-                    if(salon1_5pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon1_5pm="Clase en curso";
-                                    
-                                }
-                    else if(salon1_5pm=="libre" || salon1_5pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="12"){
-                    if(salon1_6pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon1_6pm="Clase en curso";
-                                    
-                                }
-                    else if(salon1_6pm=="libre" || salon1_6pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="13"){
-                    if(salon1_7pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon1_7pm="Clase en curso";
-                                    
-                                }
-                    else if(salon1_7pm=="libre" || salon1_7pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }                    
+        if( OpcionUsuario == "4" ){
+          if( salon1_10am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_10am = "clase en curso";
+          }
+          else if(salon1_10am == "libre" || salon1_10am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "5" ){
+          if( salon1_11am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_11am = "clase en curso";
+          }
+          else if(salon1_11am == "libre" || salon1_11am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "6" ){
+          if( salon1_12pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_12pm = "clase en curso";
+          }
+          else if(salon1_12pm == "libre" || salon1_12pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "7" ){
+          if( salon1_1pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_1pm = "clase en curso";
+          }
+          else if(salon1_1pm == "libre" || salon1_1pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "8" ){
+          if( salon1_2pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_2pm = "clase en curso";
+          }
+          else if(salon1_2pm == "libre" || salon1_2pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "9" ){
+          if( salon1_3pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_3pm = "clase en curso";
+          }
+          else if(salon1_3pm == "libre" || salon1_3pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "10" ){
+          if( salon1_4pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_4pm = "clase en curso";
+          }
+          else if(salon1_4pm == "libre" || salon1_4pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "11" ){
+          if( salon1_5pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_5pm = "clase en curso";
+          }
+          else if(salon1_5pm == "libre" || salon1_5pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "12" ){
+          if( salon1_6pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_6pm = "clase en curso";
+          }
+          else if(salon1_6pm == "libre" || salon1_6pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "13" ){
+          if( salon1_7pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon1_7pm = "clase en curso";
+          }
+          else if(salon1_7pm == "libre" || salon1_7pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
         }
         public void iniciarClaseSalon2(){
           Console.WriteLine("Que horario tienes la reserva para la clase: \n1-) 7am \n2-) 8am \n3-) 9am\n4-) 10am \n5-) 11am \n6-) 12am\n7-) 1pm \n8-) 2pm\n9-) 3pm\n10-) 4pm \n11-) 5pm \n12-) 6pm \n13-) 7pm");
-          if(OpcionUsuario=="1"){
-                    if(salon2_7am=="reservado"){
-                        Console.WriteLine("La clase ha iniciado");
-                        salon2_7am="Clase en curso";
-                        
-                    }
-                    else if(salon2_7am=="libre" || salon2_7am=="mantenimiento" ){
-                        Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                        
-                    }
+          OpcionUsuario = Console.ReadLine();
+        if( OpcionUsuario == "1" ){
+          if( salon2_7am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_7am = "clase en curso";
+          }
+          else if(salon2_7am == "libre" || salon2_7am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
         }
-         if(OpcionUsuario=="2"){
-                    if(salon2_8am=="reservado"){
-                        Console.WriteLine("La clase ha iniciado");
-                        salon2_8am="Clase en curso";
-                        
-                    }
-                    else if(salon1_8am=="libre" || salon1_8am=="mantenimiento" ){
-                        Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                        
-                    }
+        if( OpcionUsuario == "2" ){
+          if( salon2_8am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_8am = "clase en curso";
+          }
+        else if(salon2_8am == "libre" || salon2_8am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
         }
-         if(OpcionUsuario=="3"){
-                    if(salon2_9am=="reservado"){
-                        Console.WriteLine("La clase ha iniciado");
-                        salon2_9am="Clase en curso";
-                        
-                    }
-                    else if(salon2_9am=="libre" || salon2_9am=="mantenimiento" ){
-                        Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                        
-                    }
+        if( OpcionUsuario == "3" ){
+          if( salon2_9am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_9am = "clase en curso";
+          }
+          else if(salon2_9am == "libre" || salon2_9am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
         }
-          if(OpcionUsuario=="4"){
-                    if(salon2_10am=="reservado"){
-                        Console.WriteLine("La clase ha iniciado");
-                        salon2_10am="Clase en curso";
-                        
-                    }
-                    else if(salon2_10am=="libre" || salon2_10am=="mantenimiento" ){
-                        Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                    }
-                    }
-          if(OpcionUsuario=="5"){
-                    if(salon2_11am=="reservado"){
-                            Console.WriteLine("La clase ha iniciado");
-                            salon2_11am="Clase en curso";
-                            
-                        }
-                    else if(salon2_11am=="libre" || salon2_11am=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                        }
-                        }     
-            if(OpcionUsuario=="6"){
-                    if(salon2_12pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon2_12pm="Clase en curso";
-                                    
-                                }
-                    else if(salon2_12pm=="libre" || salon2_12pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="7"){
-                    if(salon2_1pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon2_1pm="Clase en curso";
-                                    
-                                }
-                    else if(salon2_1pm=="libre" || salon2_1pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="8"){
-                    if(salon2_2pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon2_2pm="Clase en curso";
-                                    
-                                }
-                    else if(salon2_2pm=="libre" || salon2_2pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                } 
-            if(OpcionUsuario=="9"){
-                    if(salon2_3pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon2_3pm="Clase en curso";
-                                    
-                                }
-                    else if(salon2_3pm=="libre" || salon2_3pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }                                       
-            if(OpcionUsuario=="10"){
-                    if(salon2_4pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon2_4pm="Clase en curso";
-                                    
-                                }
-                    else if(salon2_4pm=="libre" || salon2_4pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="11"){
-                    if(salon2_5pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon2_5pm="Clase en curso";
-                                    
-                                }
-                    else if(salon2_5pm=="libre" || salon2_5pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="12"){
-                    if(salon2_6pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon2_6pm="Clase en curso";
-                                    
-                                }
-                    else if(salon2_6pm=="libre" || salon2_6pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="13"){
-                    if(salon2_7pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon2_7pm="Clase en curso";
-                                    
-                                }
-                    else if(salon2_7pm=="libre" || salon2_7pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
+        if( OpcionUsuario == "4" ){
+          if( salon2_10am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_10am = "clase en curso";
+          }
+          else if(salon2_10am == "libre" || salon2_10am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
         }
-        
+        if( OpcionUsuario == "5" ){
+          if( salon2_11am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_11am = "clase en curso";
+          }
+          else if(salon2_11am == "libre" || salon2_11am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "6" ){
+          if( salon2_12pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_12pm = "clase en curso";
+          }
+          else if(salon2_12pm == "libre" || salon2_12pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "7" ){
+          if( salon2_1pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_1pm = "clase en curso";
+          }
+          else if(salon2_1pm == "libre" || salon2_1pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "8" ){
+          if( salon2_2pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_2pm = "clase en curso";
+          }
+          else if(salon2_2pm == "libre" || salon2_2pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "9" ){
+          if( salon2_3pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_3pm = "clase en curso";
+          }
+          else if(salon2_3pm == "libre" || salon2_3pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "10" ){
+          if( salon2_4pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_4pm = "clase en curso";
+          }
+          else if(salon2_4pm == "libre" || salon2_4pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "11" ){
+          if( salon2_5pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_5pm = "clase en curso";
+          }
+          else if(salon2_5pm == "libre" || salon2_5pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "12" ){
+          if( salon2_6pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_6pm = "clase en curso";
+          }
+          else if(salon2_6pm == "libre" || salon2_6pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "13" ){
+          if( salon2_7pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon2_7pm = "clase en curso";
+          }
+          else if(salon2_7pm == "libre" || salon2_7pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        }
         public void iniciarClaseSalon3(){
           Console.WriteLine("Que horario tienes la reserva para la clase: \n1-) 7am \n2-) 8am \n3-) 9am\n4-) 10am \n5-) 11am \n6-) 12am\n7-) 1pm \n8-) 2pm\n9-) 3pm\n10-) 4pm \n11-) 5pm \n12-) 6pm \n13-) 7pm");
-          if(OpcionUsuario=="1"){
-                    if(salon3_7am=="reservado"){
-                        Console.WriteLine("La clase ha iniciado");
-                        salon3_7am="Clase en curso";
-                        
-                    }
-                    else if(salon3_7am=="libre" || salon3_7am=="mantenimiento" ){
-                        Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                        
-                    }
+          OpcionUsuario = Console.ReadLine();
+        if( OpcionUsuario == "1" ){
+          if( salon3_7am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_7am = "clase en curso";
+          }
+          else if(salon3_7am == "libre" || salon3_7am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
         }
-         if(OpcionUsuario=="2"){
-                    if(salon3_8am=="reservado"){
-                        Console.WriteLine("La clase ha iniciado");
-                        salon3_8am="Clase en curso";
-                        
-                    }
-                    else if(salon3_8am=="libre" || salon3_8am=="mantenimiento" ){
-                        Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                        
-                    }
+        if( OpcionUsuario == "2" ){
+          if( salon3_8am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_8am = "clase en curso";
+          }
+        else if(salon3_8am == "libre" || salon3_8am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
         }
-         if(OpcionUsuario=="3"){
-                    if(salon3_9am=="reservado"){
-                        Console.WriteLine("La clase ha iniciado");
-                        salon3_9am="Clase en curso";
-                        
-                    }
-                    else if(salon3_9am=="libre" || salon3_9am=="mantenimiento" ){
-                        Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                        
-                    }
+        if( OpcionUsuario == "3" ){
+          if( salon3_9am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_9am = "clase en curso";
+          }
+          else if(salon3_9am == "libre" || salon3_9am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
         }
-          if(OpcionUsuario=="4"){
-                    if(salon3_10am=="reservado"){
-                        Console.WriteLine("La clase ha iniciado");
-                        salon3_10am="Clase en curso";
-                        
-                    }
-                    else if(salon3_10am=="libre" || salon3_10am=="mantenimiento" ){
-                        Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                    }
-                    }
-          if(OpcionUsuario=="5"){
-                    if(salon3_11am=="reservado"){
-                            Console.WriteLine("La clase ha iniciado");
-                            salon3_11am="Clase en curso";
-                            
-                        }
-                    else if(salon3_11am=="libre" || salon3_11am=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                        }
-                        }     
-            if(OpcionUsuario=="6"){
-                    if(salon3_12pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon3_12pm="Clase en curso";
-                                    
-                                }
-                    else if(salon3_12pm=="libre" || salon3_12pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="7"){
-                    if(salon3_1pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon3_1pm="Clase en curso";
-                                    
-                                }
-                    else if(salon3_1pm=="libre" || salon3_1pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="8"){
-                    if(salon3_2pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon3_2pm="Clase en curso";
-                                    
-                                }
-                    else if(salon3_2pm=="libre" || salon3_2pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                } 
-            if(OpcionUsuario=="9"){
-                    if(salon3_3pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon3_3pm="Clase en curso";
-                                    
-                                }
-                    else if(salon3_3pm=="libre" || salon3_3pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }                                       
-            if(OpcionUsuario=="10"){
-                    if(salon3_4pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon3_4pm="Clase en curso";
-                                    
-                                }
-                    else if(salon3_4pm=="libre" || salon3_4pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="11"){
-                    if(salon3_5pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon3_5pm="Clase en curso";
-                                    
-                                }
-                    else if(salon3_5pm=="libre" || salon3_5pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="12"){
-                    if(salon3_6pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon3_6pm="Clase en curso";
-                                    
-                                }
-                    else if(salon3_6pm=="libre" || salon3_6pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                                }
-            if(OpcionUsuario=="13"){
-                    if(salon3_7pm=="reservado"){
-                    Console.WriteLine("La clase ha iniciado");
-                    salon3_7pm="Clase en curso";
-                                    
-                                }
-                    else if(salon3_7pm=="libre" || salon3_7pm=="mantenimiento" ){
-                    Console.WriteLine("Este salon no esta disonible para iniciar una clase);
-                                }
-                              }
+        if( OpcionUsuario == "4" ){
+          if( salon3_10am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_10am = "clase en curso";
+          }
+          else if(salon3_10am == "libre" || salon3_10am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
         }
-*/
-        
+        if( OpcionUsuario == "5" ){
+          if( salon3_11am == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_11am = "clase en curso";
+          }
+          else if(salon3_11am == "libre" || salon3_11am == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "6" ){
+          if( salon3_12pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_12pm = "clase en curso";
+          }
+          else if(salon3_12pm == "libre" || salon3_12pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "7" ){
+          if( salon3_1pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_1pm = "clase en curso";
+          }
+          else if(salon3_1pm == "libre" || salon3_1pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "8" ){
+          if( salon3_2pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_2pm = "clase en curso";
+          }
+          else if(salon3_2pm == "libre" || salon3_2pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "9" ){
+          if( salon3_3pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_3pm = "clase en curso";
+          }
+          else if(salon3_3pm == "libre" || salon3_3pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "10" ){
+          if( salon3_4pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_4pm = "clase en curso";
+          }
+          else if(salon3_4pm == "libre" || salon3_4pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "11" ){
+          if( salon3_5pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_5pm = "clase en curso";
+          }
+          else if(salon3_5pm == "libre" || salon3_5pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "12" ){
+          if( salon3_6pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_6pm = "clase en curso";
+          }
+          else if(salon3_6pm == "libre" || salon3_6pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        if( OpcionUsuario == "13" ){
+          if( salon3_7pm == "reservado" ){
+              Console.WriteLine("Clase iniciada");
+              Console.WriteLine("Puertas abiertas\nTemperatura 23 °C");
+              salon3_7pm = "clase en curso";
+          }
+          else if(salon3_7pm == "libre" || salon3_7pm == "mantenimiento"){
+              Console.WriteLine("No es posible iniciar la clase");
+          }
+        }
+        }
         #endregion Methods
         #endregion Properties
     }
